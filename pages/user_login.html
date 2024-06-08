@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Login</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="style">
+        <img src="../images/login.jpg" alt="" />
+      </div>
+      <div class="login">
+        <h2>Login</h2>
+        <form id="login" action="./user_profile.html">
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" autofocus />
+
+          <label for="password">Password:</label>
+          <input type="password" name="password" id="password" />
+          <a href="#"> Forget Password?</a>
+          <button type="submit" id="login">Login</button>
+
+          <div class="registered">
+            <h5>Don't have an account?</h5>
+            <h5><a href="./user_registeration.html">Register</a></h5>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script>
+    document
+      .getElementById("login")
+      .addEventListener("submit", function (event) {
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+
+        if (!email || !password) {
+          alert("Please enter email and password!");
+          event.preventDefault();
+          return;
+        }
+        if (password.length < 8) {
+          alert("Password must be at least 8 characters long!");
+          event.preventDefault();
+          return;
+        }
+      });
+  </script>
+</html>

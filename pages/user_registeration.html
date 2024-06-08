@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Registeration</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+
+    <div class="wrapper-signup">
+
+      <div class="style">
+        <img src="../images/login.jpg" alt="" />
+      </div>
+      <div class="registeration">
+        <h2>Registeration</h2>
+        <form id="registeration" action="./user_login.html">
+        <label for="fullname">Fullname:</label> 
+        <input type="text" id="fullname" name="fullname" autofocus />
+
+        <label for="email">Email:</label> 
+        <input type="email" id="email" name="email" /> 
+
+        <label for="phonenumber">Phone Number:</label>
+        <input
+          type="tel"
+          id="phonenumber"
+          name="phonenumber"
+          placeholder="+977 9000000000"
+        />
+        <label for="password">Password:</label> 
+        <input type="password" id="password" name="password" />
+        <button type="submit" id="register">Register</button>
+
+        <div class="registered">
+          <h5>Already Registered?</h5>
+          <h5><a href="./user_login.html">Login</a></h5>
+        </div>
+      </div>
+      </form>
+    </div>
+  </body>
+  <script>
+    document
+      .getElementById("registeration")
+      .addEventListener("submit", function (event) {
+        let fullname = document.getElementById("fullname").value;
+        let phonenumber = document.getElementById("phonenumber").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+
+        let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        if (!fullname || !email || !phonenumber || !password) {
+          alert("Please enter all the required credentials");
+          event.preventDefault();
+          return;
+        }
+
+        if (!emailRegex.test(email)) {
+          alert("Please enter valid email");
+          event.preventDefault();
+          return;
+        }
+
+        if (password.length < 8) {
+          alert("Password must be at least  8 characters long.");
+          event.preventDefault();
+          return;
+        }
+      });
+  </script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Profile</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <div class="userProfile">
+      <h2>Edit Personal Details</h2>
+
+      <img src="../images/photo.jpg" alt="User image" />
+      <h5>Edit Photo</h5>
+
+      <div class="profile">
+        <label for="firstname">Firstname:</label>
+        <input type="text" id="firstname" name="firstname" value="Rishav" />
+
+        <label for="lastname">Lastname:</label>
+        <input type="text" id="lastname" name="lastname" value="Shrestha" />
+
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          value="shrestharishav3@gmail.com"
+        />
+
+        <label for="phonenumber">Phone Number:</label>
+        <input
+          type="tel"
+          id="phonenumber"
+          name="phonenumber"
+          value="9808350424"
+        />
+
+        <label for="Gender"> Gender:</label>
+        <input type="text" id="gender" name="gender" value="Male" />
+        <label for="dob">DOB:</label>
+        <input type="date" id="dob" name="dob" />
+
+        <label for="age">Age:</label>
+        <input type="number" name="age" id="age" value="21" />
+      </div>
+      <button id="viewUsers">View Users</button>
+    </div>
+  </body>
+  <script>
+    document.getElementById("viewUsers").addEventListener("click", function () {
+      window.location.href = "./user_lists.html";
+    });
+  </script>
+</html>
